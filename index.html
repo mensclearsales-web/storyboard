@@ -1,0 +1,1383 @@
+# storyboard<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メンズクリア｜カウンセリング動画 絵コンテ＆台本【初級編】</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --blue: #1E88E5;
+    --blue-dark: #0D47A1;
+    --blue-light: #E3F2FD;
+    --orange: #F57C00;
+    --orange-light: #FFF3E0;
+    --green: #2E7D32;
+    --green-light: #E8F5E9;
+    --red: #C62828;
+    --red-light: #FFEBEE;
+    --gray-50: #FAFAFA;
+    --gray-100: #F5F5F5;
+    --gray-200: #EEEEEE;
+    --gray-400: #BDBDBD;
+    --gray-600: #757575;
+    --gray-800: #424242;
+    --gray-900: #212121;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--gray-100);
+    color: var(--gray-900);
+    line-height: 1.7;
+  }
+
+  /* ===== HEADER ===== */
+  .doc-header {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #42A5F5 100%);
+    color: white;
+    padding: 48px 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::before {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    right: 80px; bottom: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .doc-header .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .doc-header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .doc-header .meta {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+    opacity: 0.85;
+    flex-wrap: wrap;
+  }
+  .doc-header .meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ===== OVERVIEW TABLE ===== */
+  .overview-section {
+    background: white;
+    margin: 24px 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .section-header {
+    background: var(--blue-dark);
+    color: white;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .overview-table th {
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+    border-bottom: 2px solid var(--blue);
+  }
+  .overview-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+  .overview-table tr:last-child td { border-bottom: none; }
+  .overview-table tr:nth-child(even) td { background: var(--gray-50); }
+
+  .time-badge {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .section-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .tag-open { background: #E8EAF6; color: #283593; }
+  .tag-s0 { background: #F3E5F5; color: #6A1B9A; }
+  .tag-s1 { background: var(--blue-light); color: var(--blue-dark); }
+  .tag-s2 { background: var(--orange-light); color: var(--orange); }
+  .tag-s3 { background: var(--green-light); color: var(--green); }
+  .tag-end { background: #E0F2F1; color: #00695C; }
+
+  /* ===== SCENE CARDS ===== */
+  .container { padding: 0 32px 48px; }
+
+  .scene-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--blue);
+  }
+  .scene-card.opening { border-left-color: #5C6BC0; }
+  .scene-card.mindset { border-left-color: #7B1FA2; }
+  .scene-card.section1 { border-left-color: var(--blue); }
+  .scene-card.section2 { border-left-color: var(--orange); }
+  .scene-card.section3 { border-left-color: var(--green); }
+  .scene-card.ending { border-left-color: #00897B; }
+
+  .scene-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+  }
+  .scene-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--gray-400);
+    min-width: 48px;
+  }
+  .scene-title {
+    flex: 1;
+  }
+  .scene-title h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 2px;
+  }
+  .scene-title .subtitle {
+    font-size: 12px;
+    color: var(--gray-600);
+  }
+  .scene-time {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--gray-900);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .scene-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .scene-col {
+    padding: 20px 24px;
+    border-right: 1px solid var(--gray-200);
+  }
+  .scene-col:last-child { border-right: none; }
+  .scene-col.full-width {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+
+  .col-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .col-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-200);
+  }
+
+  /* ===== VISUAL BOX ===== */
+  .visual-box {
+    background: var(--gray-900);
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    min-height: 120px;
+    margin-bottom: 12px;
+  }
+  .visual-box .screen-label {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.08);
+    padding: 6px 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+  .visual-box .frame-content {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .frame-shot {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .frame-shot .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .frame-shot .text { line-height: 1.5; }
+
+  /* ===== TELOP ===== */
+  .telop-items { display: flex; flex-direction: column; gap: 8px; }
+  .telop-item {
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .telop-item.key {
+    background: #E3F2FD;
+    border-left: 3px solid var(--blue);
+    color: var(--blue-dark);
+  }
+  .telop-item.ng {
+    background: var(--red-light);
+    border-left: 3px solid var(--red);
+    color: var(--red);
+  }
+  .telop-item.tip {
+    background: var(--orange-light);
+    border-left: 3px solid var(--orange);
+    color: #E65100;
+  }
+  .telop-item.ok {
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    color: var(--green);
+  }
+  .telop-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .key .telop-label { background: var(--blue); color: white; }
+  .ng .telop-label { background: var(--red); color: white; }
+  .tip .telop-label { background: var(--orange); color: white; }
+  .ok .telop-label { background: var(--green); color: white; }
+
+  /* ===== NARRATION ===== */
+  .narration-box {
+    background: #F8F9FF;
+    border: 1px solid #C5CAE9;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--gray-800);
+    position: relative;
+  }
+  .narration-box::before {
+    content: '🎙 ナレーション';
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #5C6BC0;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== DIALOGUE ===== */
+  .dialogue-section { display: flex; flex-direction: column; gap: 12px; }
+
+  .speech-bubble {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .speech-bubble.customer { flex-direction: row-reverse; }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .avatar.staff { background: var(--blue); color: white; }
+  .avatar.customer-av { background: #EF6C00; color: white; }
+
+  .bubble {
+    max-width: calc(100% - 52px);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .staff .bubble {
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    border-bottom-left-radius: 4px;
+  }
+  .customer .bubble {
+    background: #FFF8E1;
+    color: #E65100;
+    border-bottom-right-radius: 4px;
+  }
+
+  .bubble-name {
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    opacity: 0.7;
+  }
+
+  /* ===== SEPARATOR ===== */
+  .phase-separator {
+    background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+    color: white;
+    padding: 20px 32px;
+    margin: 32px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 0;
+  }
+  .phase-separator .arrow {
+    font-size: 24px;
+    opacity: 0.4;
+  }
+  .phase-separator h2 {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .phase-separator .phase-time {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  /* ===== SCENE GRID (4-col) ===== */
+  .scene-body-4 {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+    gap: 0;
+  }
+  .scene-body-4 .scene-col {
+    border-right: 1px solid var(--gray-200);
+  }
+  .scene-body-4 .scene-col:last-child { border-right: none; }
+
+  /* ===== TIPS BOX ===== */
+  .tips-section {
+    background: white;
+    margin: 32px 32px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .tip-card {
+    padding: 20px 24px;
+    border-right: 1px solid var(--gray-200);
+  }
+  .tip-card:last-child { border-right: none; }
+  .tip-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--gray-200);
+    margin-bottom: 4px;
+  }
+  .tip-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+  .tip-body {
+    font-size: 12px;
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+
+  /* ===== FOOTER ===== */
+  .doc-footer {
+    background: var(--gray-900);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    margin-top: 48px;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .scene-body { grid-template-columns: 1fr 1fr; }
+    .scene-body-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    .tips-grid { grid-template-columns: 1fr 1fr 1fr; }
+    body { background: white; }
+    .overview-section, .tips-section { margin: 16px 0; }
+    .container { padding: 0 0 24px; }
+  }
+
+  .keyword-chip {
+    display: inline-block;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin: 2px;
+  }
+  .keyword-chip.ng { background: var(--red-light); color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="badge">PRODUCTION DOCUMENT</div>
+  <h1>メンズクリア カウンセリングツール<br>教育用動画【初級編】<br>絵コンテ＆台本</h1>
+  <div class="meta">
+    <span>📹 想定尺：7〜10分</span>
+    <span>🎯 対象：初めてツールを使うスタッフ</span>
+    <span>📅 2026年4月版</span>
+  </div>
+</div>
+
+<!-- OVERVIEW TABLE -->
+<div class="overview-section" style="margin-top: 24px;">
+  <div class="section-header">📋 動画全体構成タイムライン</div>
+  <table class="overview-table">
+    <thead>
+      <tr>
+        <th>タイムコード</th>
+        <th>セクション</th>
+        <th>シーン名</th>
+        <th>主な内容</th>
+        <th>尺</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="time-badge">0:00〜0:25</span></td>
+        <td><span class="section-tag tag-open">OPEN</span></td>
+        <td>オープニング</td>
+        <td>タイトル・目的・登場人物紹介</td>
+        <td>約25秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">0:25〜1:00</span></td>
+        <td><span class="section-tag tag-s0">SEC 0</span></td>
+        <td>マインドセット＆5つの厳守事項</td>
+        <td>型を守る理由・NG行動の周知</td>
+        <td>約35秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">1:00〜1:25</span></td>
+        <td><span class="section-tag tag-s1">SEC 1</span></td>
+        <td>ツール全体像の説明</td>
+        <td>44ページ構成・4セクション概要</td>
+        <td>約25秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">1:25〜2:00</span></td>
+        <td><span class="section-tag tag-s1">SEC 1</span></td>
+        <td>P2：医療vsエステ比較</td>
+        <td>スクリプト実演・ポイント解説</td>
+        <td>約35秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">2:00〜2:30</span></td>
+        <td><span class="section-tag tag-s1">SEC 1</span></td>
+        <td>P3：通院ペース</td>
+        <td>2週間に1回の優位性を訴求</td>
+        <td>約30秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">2:30〜3:15</span></td>
+        <td><span class="section-tag tag-s1">SEC 1</span></td>
+        <td>P4〜P6：機器紹介＆サービス魅力</td>
+        <td>クリアプロ・ストライク・JCSE・前払金</td>
+        <td>約45秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">3:15〜3:40</span></td>
+        <td><span class="section-tag tag-s1">SEC 1</span></td>
+        <td>P7〜P8：照射範囲確認＋フェーズ切り替え</td>
+        <td>ヒゲ・全身範囲確認、次フェーズへの橋渡し</td>
+        <td>約25秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">3:40〜4:00</span></td>
+        <td><span class="section-tag tag-s2">SEC 2</span></td>
+        <td>診断ステップ導入（P9）</td>
+        <td>「自分で選ぶ設計」への切り替えトーク</td>
+        <td>約20秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">4:00〜5:15</span></td>
+        <td><span class="section-tag tag-s2">SEC 2</span></td>
+        <td>STEP 1〜4 実演（P10〜P13）</td>
+        <td>部位・範囲・機器・仕上がり選択の完全デモ</td>
+        <td>約75秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">5:15〜5:35</span></td>
+        <td><span class="section-tag tag-s2">SEC 2</span></td>
+        <td>クイックファインダーの使い方</td>
+        <td>診断コード→対応ページ即開きの実演</td>
+        <td>約20秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">5:35〜6:30</span></td>
+        <td><span class="section-tag tag-s3">SEC 3</span></td>
+        <td>料金提示トーク（3社比較）</td>
+        <td>当日割・セット割を含む提示スクリプト実演</td>
+        <td>約55秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">6:30〜7:30</span></td>
+        <td><span class="section-tag tag-s3">SEC 3</span></td>
+        <td>クロージング後の分岐対応</td>
+        <td>①契約②検討③再提案④お見送りの4パターン</td>
+        <td>約60秒</td>
+      </tr>
+      <tr>
+        <td><span class="time-badge">7:30〜8:00</span></td>
+        <td><span class="section-tag tag-end">END</span></td>
+        <td>まとめ＆ボイスチェック案内</td>
+        <td>15項目チェックリスト・中級編への案内</td>
+        <td>約30秒</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- ========== OPENING ========== -->
+  <div class="phase-separator">
+    <span>🎬</span>
+    <h2>OPENING</h2>
+    <span class="phase-time">0:00〜0:25</span>
+  </div>
+
+  <div class="scene-card opening">
+    <div class="scene-header">
+      <div class="scene-num">01</div>
+      <div class="scene-title">
+        <h3>オープニング｜タイトル・目的・登場人物</h3>
+        <div class="subtitle">視聴者が「何のための動画か」を即座に把握する</div>
+      </div>
+      <div class="scene-time">0:00〜0:25</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">🎬</span><span class="text">ブランドカラー（ブルー×オレンジ）の背景にロゴが中央からフェードイン（0:00〜0:05）</span></div>
+            <div class="frame-shot"><span class="icon">📷</span><span class="text">カウンセリングルームの全景ショット。スタッフ・お客様がテーブルを挟んで座る俯瞰カット（0:05〜0:15）</span></div>
+            <div class="frame-shot"><span class="icon">🎭</span><span class="text">スタッフとお客様のバストショット交互。どちらも自然な笑顔。ツールが画面に入るよう意識（0:15〜0:25）</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">TELOP</span>タイトル：「メンズクリア カウンセリングツール 使い方マニュアル【初級編】」</div>
+          <div class="telop-item key"><span class="telop-label">TELOP</span>登場人物紹介テロップ：「スタッフ役」「お客様役」「ナレーション：解説担当」</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション</div>
+        <div class="narration-box">
+          この動画では、初回カウンセリングで使うツールの操作方法を、実際のデモンストレーションを通してお伝えします。スタッフ役とお客様役による実演をベースに、ポイントをわかりやすく解説していきます。動画を見ながら、手元にツールを準備してご覧いただくと、より効果的に学べます。
+        </div>
+        <div style="margin-top: 16px;">
+          <div class="col-label">💬 セリフ</div>
+          <div class="dialogue-section">
+            <div class="speech-bubble staff">
+              <div class="avatar staff">S</div>
+              <div class="bubble">
+                <div class="bubble-name">スタッフ役</div>
+                （セリフなし。笑顔でお客様を迎える表情のみ）
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 0 ========== -->
+  <div class="phase-separator" style="background: linear-gradient(135deg, #4A148C, #7B1FA2);">
+    <span>🧠</span>
+    <h2>SECTION 0｜マインドセット＆厳守事項</h2>
+    <span class="phase-time">0:25〜1:00</span>
+  </div>
+
+  <div class="scene-card mindset">
+    <div class="scene-header">
+      <div class="scene-num">02</div>
+      <div class="scene-title">
+        <h3>初級編のマインドセット｜「型」を守ることの重要性</h3>
+        <div class="subtitle">型を崩さない理由を、感情的・論理的の両面から伝える</div>
+      </div>
+      <div class="scene-time">0:25〜1:00</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">🎤</span><span class="text">スタッフ役がカメラ目線で正面に立ち、落ち着いた表情で直接語りかけるシーン。背景はシンプルなグラデーション壁面</span></div>
+            <div class="frame-shot"><span class="icon">📊</span><span class="text">5つの厳守事項がカウントアップ形式でスライドインするモーショングラフィック（テロップのみ）</span></div>
+            <div class="frame-shot"><span class="icon">📈</span><span class="text">「成約率40%→70%以上」の比較グラフをアニメーションで表示</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">TELOP</span>①トークスクリプトを一字一句変えない</div>
+          <div class="telop-item key"><span class="telop-label">TELOP</span>②順序を飛ばさない</div>
+          <div class="telop-item key"><span class="telop-label">TELOP</span>③お客様の選択を誘導しない</div>
+          <div class="telop-item key"><span class="telop-label">TELOP</span>④診断結果は必ず根拠を説明</div>
+          <div class="telop-item key"><span class="telop-label">TELOP</span>⑤クロージングは焦らず、お客様のペースを守る</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>自己流アレンジは信頼を損ない成約率を下げる原因になります</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション</div>
+        <div class="narration-box">
+          初級編の目標はたった一つです。マニュアルの「型」を100%再現すること。自分流のアレンジは必要ありません。このマニュアルは、誰がいつ説明しても「常に100点の案内」ができるように設計された、いわば「自動ナビゲーション付きの地図」です。ツール通りに進めるだけで、トップカウンセラーと同じ成約率70%以上が実現できます。まず、次の5つの厳守事項を必ず守ってください。
+        </div>
+        <div style="margin-top: 16px;">
+          <div class="col-label">💬 セリフ（スタッフ役 → カメラ目線）</div>
+          <div class="dialogue-section">
+            <div class="speech-bubble staff">
+              <div class="avatar staff">S</div>
+              <div class="bubble">
+                <div class="bubble-name">スタッフ役（カメラ目線）</div>
+                初級編では、まずこのマニュアルの型を完璧に身につけることが最優先です。型を守ることが、お客様への最高のサービスに直結します。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="phase-separator" style="background: linear-gradient(135deg, #0D47A1, #1976D2);">
+    <span>📖</span>
+    <h2>SECTION 1｜ブックトーク（仕組み説明）</h2>
+    <span class="phase-time">1:00〜3:40</span>
+  </div>
+
+  <div class="scene-card section1">
+    <div class="scene-header">
+      <div class="scene-num">03</div>
+      <div class="scene-title">
+        <h3>ツール全体像の確認｜カウンセリング開始〜P1</h3>
+        <div class="subtitle">「ここから案内が始まる」という切り替えを明確に演出する</div>
+      </div>
+      <div class="scene-time">1:00〜1:25</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📋</span><span class="text">スタッフがツールをテーブルに置き、P1（表紙）を開く手元クローズアップ。指がページ上を動く</span></div>
+            <div class="frame-shot"><span class="icon">👥</span><span class="text">俯瞰カメラ：スタッフとお客様がテーブルを挟んでツールを見る構図。ツールが画面中央に来るよう配置</span></div>
+            <div class="frame-shot"><span class="icon">🗺️</span><span class="text">マニュアルの「ツール全体像スライド」をインサートカットで表示。4セクションの流れを視覚化</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">TELOP</span>【全体の流れ】①仕組み説明 → ②脱毛診断 → ③診断結果 → ④料金提示</div>
+          <div class="telop-item tip"><span class="telop-label">POINT</span>ツールは常にお客様側に向けて開く。スタッフ側から読み上げるのはNG</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">💬 セリフ</div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ役</div>
+              本日はご来店いただきありがとうございます。まずはメンズクリアの脱毛について、こちらのツールを使いながら順番にご説明させてください。
+            </div>
+          </div>
+          <div class="speech-bubble customer">
+            <div class="avatar customer-av">C</div>
+            <div class="bubble">
+              <div class="bubble-name">お客様役</div>
+              はい、よろしくお願いします。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ役</div>
+              全部で4つのステップに沿ってご案内します。まず脱毛の仕組みをお伝えして、その後お客様に合ったプランを一緒に決めていきましょう。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene-card section1">
+    <div class="scene-header">
+      <div class="scene-num">04</div>
+      <div class="scene-title">
+        <h3>P2：医療vsエステ比較トーク</h3>
+        <div class="subtitle">数値根拠で不安を解消する。「痛くないですよ」だけは絶対NG</div>
+      </div>
+      <div class="scene-time">1:25〜2:00</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📖</span><span class="text">ツールP2をクローズアップ。比較表（医療/エステ）が見えるように。スタッフの指が各比較項目を指しながら動く</span></div>
+            <div class="frame-shot"><span class="icon">😊</span><span class="text">お客様の表情カット（リアクションショット）：「なるほど」「安心した」という表情を3秒挿入</span></div>
+            <div class="frame-shot"><span class="icon">🔴</span><span class="text">【NG例】スタッフが「痛くないですよ」とだけ言うカットを赤枠で表示→「これはNGです」とテロップ</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">必須KW</span>医療vsエステ ／ 痛み軽減 ／ 肌負担少ない</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>「痛くないですよ」だけで終わる → 根拠なし＝信頼ゼロ</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>「医療の方が効果がある」と思わせる言い方</div>
+          <div class="telop-item ok"><span class="telop-label">OK</span>「痛みを抑えつつ」「着実に毛を減らす」「肌負担が非常に少ない」の3点を必ず含める</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          P2では、医療脱毛とエステ脱毛の違いを明確に伝えます。医療の「痛みで断念する人が多い」というリスクを先に伝えることで、当店の継続しやすさが際立ちます。数値なしの説明は信頼を失います。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ役（P2を指しながら）</div>
+              まず脱毛には「医療」と「エステ」の2種類があります。医療はパワーが強い分、痛みで断念される方も多いのですが、当店の脱毛は痛みを抑えつつ、着実に毛を減らす方法をとっています。肌への負担も非常に少ないので安心してくださいね。
+            </div>
+          </div>
+          <div class="speech-bubble customer">
+            <div class="avatar customer-av">C</div>
+            <div class="bubble">
+              <div class="bubble-name">お客様役</div>
+              なるほど、それなら安心ですね。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene-card section1">
+    <div class="scene-header">
+      <div class="scene-num">05</div>
+      <div class="scene-title">
+        <h3>P3：通院ペース｜P4：クリアプロ｜P5：ストライク</h3>
+        <div class="subtitle">具体的数値が命。冷却温度・施術時間・浸透効果の倍率を正確に言い切る</div>
+      </div>
+      <div class="scene-time">2:00〜3:15</div>
+    </div>
+    <div class="scene-body-4">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box" style="min-height: 200px;">
+          <div class="screen-label">CAMERA</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📖</span><span class="text">P3→P4→P5とページをめくる手元クローズアップ（各ページ2〜3秒で次へ）</span></div>
+            <div class="frame-shot"><span class="icon">❄️</span><span class="text">P4：クリアプロの機器写真にズームインしながら「-4℃」数値テロップをオーバーレイ</span></div>
+            <div class="frame-shot"><span class="icon">⚡</span><span class="text">P5：ストライクの機器写真。「20倍」「60分」テロップを強調アニメで表示</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">📝 テロップ</div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">P3</span>最短2週間に1回（医療：2〜3ヶ月に1回の差）</div>
+          <div class="telop-item key"><span class="telop-label">P4</span>クリアプロ：-4℃冷却 ／ 最短10分</div>
+          <div class="telop-item key"><span class="telop-label">P5</span>ストライク：メンズ業界初 ／ イオン導入の20倍 ／ 全身60分</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>数値を「だいたい」「すごく」などで曖昧にしない</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション</div>
+        <div class="narration-box" style="font-size: 12px;">
+          P3では通院頻度の優位性を、P4ではクリアプロの冷却機能による痛み軽減を、P5ではストライクの最新技術を説明します。いずれも具体的な数値を正確に伝えることで、お客様の信頼が生まれます。数値を曖昧にすることは絶対に避けてください。
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">💬 セリフ</div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（P3）</div>
+              次に通うペースです。医療だと2〜3ヶ月に1回ですが、当店はヒゲなら最短2週間に1回施術が可能です。他店が1回進める間に、当店なら何度も通えるので、非常に効率よくスピーディーに進められます。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（P4）</div>
+              痛くない秘密はこの「クリアプロ」という自社開発マシンにあります。照射口がマイナス4℃でキンキンに冷えているので、熱さや痛みを大幅に軽減できます。ヒゲなら最短10分で終わるほどスピーディーです。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（P5）</div>
+              メンズ業界初、脱毛と同時に本格的な肌ケアができる最新マシン「ストライク」を導入しています。従来のイオン導入の20倍という圧倒的な浸透効果があります。全身脱毛もわずか60分で完了します。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene-card section1">
+    <div class="scene-header">
+      <div class="scene-num">06</div>
+      <div class="scene-title">
+        <h3>P6：メンズクリアの魅力｜P7〜P8：照射範囲確認＋フェーズ切り替え</h3>
+        <div class="subtitle">「追加料金0円」「JCSE」「前払金保証」の3点は絶対に省略しない</div>
+      </div>
+      <div class="scene-time">3:15〜3:40</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📖</span><span class="text">P6の6つの魅力ポイントをスタッフが順番に指差し。「JCSE」「前払金保証制度」で一時停止し強調</span></div>
+            <div class="frame-shot"><span class="icon">🗺️</span><span class="text">P7：ヒゲのイラストをクローズアップ。照射範囲（色づいた部分）を指でなぞる</span></div>
+            <div class="frame-shot"><span class="icon">🔄</span><span class="text">フェーズ切り替えのタイミング：スタッフがページを一旦閉じ、お客様に確認を取る間（2秒程度のポーズ）を明確に演出</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">必須KW</span>追加料金0円 ／ JCSE認定資格 ／ 前払金保証制度</div>
+          <div class="telop-item key"><span class="telop-label">TELOP</span>【フェーズ切り替え】必ず「ご不明点はありますか？」で区切ってから次へ</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>資格の説明を省略、「安心ですよ」だけで終わる</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          P6はサービスの信頼感を構築する重要なページです。3つのキーワード（追加料金0円・JCSE・前払金保証）を必ず言い切ってください。その後、セクション間の「橋渡しトーク」でお客様の理解を確認してから次へ進みます。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（P6）</div>
+              当店は記載の内容以外に追加料金が発生しません。また全スタッフが「JCSE認定資格」というプロの専門資格を取得しており、「前払金保証制度」も導入していますので、万が一のことがあっても安心してお通いいただけます。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（フェーズ切り替え）</div>
+              ここまでメンズクリアの仕組みについてご説明しましたが、ご不明点はございますでしょうか？それでは次に、実際にどの範囲を綺麗にできるのか確認していきましょう。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="phase-separator" style="background: linear-gradient(135deg, #E65100, #F57C00);">
+    <span>🎯</span>
+    <h2>SECTION 2｜脱毛診断ステップ</h2>
+    <span class="phase-time">3:40〜5:35</span>
+  </div>
+
+  <div class="scene-card section2">
+    <div class="scene-header">
+      <div class="scene-num">07</div>
+      <div class="scene-title">
+        <h3>診断ステップ導入｜「自分で選ぶ設計」への切り替え（P9）</h3>
+        <div class="subtitle">「診断します」ではなく「一緒に選びましょう」という空気感を作る</div>
+      </div>
+      <div class="scene-time">3:40〜4:00</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📖</span><span class="text">ツールをP9（脱毛診断ステップ）に開き、お客様側に傾けながら見せる動作を手元クローズアップ</span></div>
+            <div class="frame-shot"><span class="icon">🤝</span><span class="text">スタッフとお客様の両手がページを挟むような構図（協力・一緒に選ぶ雰囲気を演出）</span></div>
+            <div class="frame-shot"><span class="icon">📝</span><span class="text">スタッフがメモ用紙を取り出し、「STEP1〜STEP4」と書いてから選択を記録する準備をするカット</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">POINT</span>「お客様が自分で選ぶ」設計に切り替える重要フェーズ</div>
+          <div class="telop-item tip"><span class="telop-label">TIP</span>STEP1〜4の選択結果は必ずメモに控える。記憶だけに頼らない</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>先回り提案・誘導質問でお客様の選択を歪めること</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          ここからが最も重要なセクションです。診断ステップでは、スタッフが提案するのではなく、お客様自身に選んでもらいます。4つのSTEPを順番に質問し、答えが出るまで静かに待ちましょう。この「沈黙」が成約率70%以上を生む魔法です。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ役</div>
+              ここからは、○○様に合った最適なプランを一緒に見つけていきましょう。STEP1から4まで、直感でお選びいただくだけで、最適なプランが決まる仕組みになっています。お気軽に選んでみてください。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene-card section2">
+    <div class="scene-header">
+      <div class="scene-num">08</div>
+      <div class="scene-title">
+        <h3>STEP1〜4 完全実演｜部位・範囲・機器・仕上がり選択（P10〜P13）</h3>
+        <div class="subtitle">沈黙3〜5秒を画面に残す。カットしない。選択の「待つ姿勢」を見せる</div>
+      </div>
+      <div class="scene-time">4:00〜5:15</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📱</span><span class="text">STEP1（P10）クローズアップ：A・B・Cの3択が見えるアングル。スタッフがA〜Cを指でなぞりながら説明</span></div>
+            <div class="frame-shot"><span class="icon">⏱️</span><span class="text">【沈黙シーン】お客様が選択する間、スタッフが静かに待つ姿をリアルタイムで撮影（3〜5秒、カット不要）</span></div>
+            <div class="frame-shot"><span class="icon">📝</span><span class="text">スタッフがメモに「B→B→A→C」と記録する手元クローズアップ。各STEP後に記録する習慣を見せる</span></div>
+            <div class="frame-shot"><span class="icon">👁️</span><span class="text">STEP4（P13）：仕上がりイメージ写真（A・B・C）が映るよう、ページをお客様に向けたアングルで固定</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">STEP1</span>A:ヒゲのみ ／ B:全身・VIO・ヒゲ ／ C:迷っている</div>
+          <div class="telop-item key"><span class="telop-label">STEP2</span>A:3部位（鼻下・口下・あご）／ B:顔全体</div>
+          <div class="telop-item key"><span class="telop-label">STEP3</span>A:ストライク（エレポレ）／ B:クリアプロ（通常）</div>
+          <div class="telop-item key"><span class="telop-label">STEP4</span>A:毛が残る ／ B:少し残る ／ C:ほとんど無い（ツルツル）</div>
+          <div class="telop-item tip"><span class="telop-label">⏱</span>【沈黙中】画面右下テロップ：「お客様が選ぶまで静かに待つ ← これが正解」</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>「こちらがおすすめですよ」「Bにしませんか？」などの誘導は絶対禁止</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ（ヒアリング型）</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          今回のデモでは、お客様がB（全身）→B（顔全体）→A（ストライク）→C（ツルツル）を選択します。各STEPで「質問→沈黙→選択待ち」のリズムを必ず守ってください。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（STEP1）</div>
+              照射範囲でお伝えしたとおり、効率よくお得に脱毛計画するならBがおすすめですが、○○様はヒゲだけで十分ですか？それとも全身・VIO・ヒゲまで全部スッキリさせたいですか？
+            </div>
+          </div>
+          <div class="speech-bubble customer">
+            <div class="avatar customer-av">C</div>
+            <div class="bubble">
+              <div class="bubble-name">お客様役（3秒考えてから）</div>
+              …Bにします。全部やってみたいです。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（STEP2）</div>
+              口周りだけだと頬やもみあげも継続的に自己処理する必要が出てくるため、今後も自己処理を減らしたい・なくしたいのであればBの全体がおすすめですが、○○様はお口周りの3点だけで十分ですか？それともお顔全体をカバーしたいですか？
+            </div>
+          </div>
+          <div class="speech-bubble customer">
+            <div class="avatar customer-av">C</div>
+            <div class="bubble">
+              <div class="bubble-name">お客様役</div>
+              顔全体をカバーしたいのでBで。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（STEP3）</div>
+              脱毛後は肌トラブルが生じる可能性もあるため、肌のケアをしながら脱毛できるとスムーズに進めるので、Aがおすすめですが、○○様はお肌への負担はどうお考えですか？
+            </div>
+          </div>
+          <div class="speech-bubble customer">
+            <div class="avatar customer-av">C</div>
+            <div class="bubble">
+              <div class="bubble-name">お客様役</div>
+              肌への負担は少ない方がいいので、Aにします。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（STEP4）</div>
+              今後自己処理をどうしたいかにより変わります。自己処理を減らすのであればBが目安で、自己処理はもうしたくないと思うならCが目安ですが、今後自己処理はなくしたいですか？
+            </div>
+          </div>
+          <div class="speech-bubble customer">
+            <div class="avatar customer-av">C</div>
+            <div class="bubble">
+              <div class="bubble-name">お客様役</div>
+              できれば自己処理はなくしたいです。Cで。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene-card section2">
+    <div class="scene-header">
+      <div class="scene-num">09</div>
+      <div class="scene-title">
+        <h3>クイックファインダーの使い方｜診断コード→ページ即開き</h3>
+        <div class="subtitle">B-B-A-C = P34。迷わず3秒以内に対応ページを開く</div>
+      </div>
+      <div class="scene-time">5:15〜5:35</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">🗂️</span><span class="text">マニュアル冊子のクイックファインダー表をクローズアップ。指が「B-B-A-C → P34」の行をなぞる</span></div>
+            <div class="frame-shot"><span class="icon">⚡</span><span class="text">スタッフが即座にツールのP34を開く手元を撮影。「迷わず・素早く・スムーズに」を体現する動き</span></div>
+            <div class="frame-shot"><span class="icon">📊</span><span class="text">画面分割：左に「クイックファインダー表」右に「開いたページ（P34）」を並べて表示</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">DEMO</span>診断コード：B-B-A-C ＝ ツールP34を開く</div>
+          <div class="telop-item tip"><span class="telop-label">TIP</span>コードが見つからない場合 → マニュアルP21のヒアリング型フローを参照</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>ページを探してモタモタする → お客様の集中力が途切れる</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          STEP1〜4の選択が終わったら、記録したメモを確認しながらクイックファインダーで対応ページを探します。今回のコードはB-B-A-C。対応するのはツールのP34です。迷わず開くことが、スムーズな接客の証明です。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（クイックファインダー確認後）</div>
+              診断結果が出ました。○○様のご要望を元に、最適なプランをご提示しますね。こちらのページをご覧ください。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="phase-separator" style="background: linear-gradient(135deg, #1B5E20, #2E7D32);">
+    <span>✅</span>
+    <h2>SECTION 3｜クロージング</h2>
+    <span class="phase-time">5:35〜7:30</span>
+  </div>
+
+  <div class="scene-card section3">
+    <div class="scene-header">
+      <div class="scene-num">10</div>
+      <div class="scene-title">
+        <h3>料金提示トーク｜3社比較＋当日割・セット割の強調</h3>
+        <div class="subtitle">「本日がチャンス」を必ず言う。割引条件の言い忘れはNGの代表例</div>
+      </div>
+      <div class="scene-time">5:35〜6:30</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">📊</span><span class="text">診断結果ページを開き、メンズクリア・他社エステ・医療脱毛の3社価格比較表がお客様側に向く構図</span></div>
+            <div class="frame-shot"><span class="icon">👆</span><span class="text">「メンズクリア」の価格欄を指差しながらアピール。他社と比較しながら左右に指を動かす</span></div>
+            <div class="frame-shot"><span class="icon">⭐</span><span class="text">「本日限定」テロップを画面上に大きく強調表示（フラッシュエフェクト付き）</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">必須KW</span>診断結果 ／ 最適なプラン ／ 本日限定 ／ 当日割 ／ セット割 ／ 本日がチャンス</div>
+          <div class="telop-item ng"><span class="telop-label">NG①</span>割引条件を言い忘れる → 後から伝えると信頼損失</div>
+          <div class="telop-item ng"><span class="telop-label">NG②</span>価格だけ読み上げて終わる → 他社比較と価値訴求が必須</div>
+          <div class="telop-item ng"><span class="telop-label">NG③</span>他社比較ページを省略する → 価格の「安さの理由」が伝わらない</div>
+          <div class="telop-item ok"><span class="telop-label">OK</span>「提示後は選ぶまで待つ」── 急かさない、沈黙を恐れない</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          料金提示は3ステップで。①診断結果の再確認 → ②他社との価格比較 → ③本日限定の割引強調。必ず「本日がチャンス」を言い切ってから、お客様の反応を待ちましょう。提示後は絶対に急かさないこと。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ（診断結果提示）</div>
+              診断結果は、全身＋VIO＋ヒゲ全体の12回コースとなりました。○○様が選択されたご要望を踏まえると、こちらのプランがご理想に近づける最適なプランでございます。他社のエステや医療脱毛と比べ、よりお得に始められる価格帯でございます。また、本日限定で当日割引・セット割引の適用が可能となります。1番お得に始めるのは、本日がチャンスでございますので、ぜひこちらのプランで始めてみませんか？
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene-card section3">
+    <div class="scene-header">
+      <div class="scene-num">11</div>
+      <div class="scene-title">
+        <h3>クロージング後の4パターン分岐対応</h3>
+        <div class="subtitle">画面4分割で全パターンを一度に見せる。「丁寧なお見送り」も接客の一部</div>
+      </div>
+      <div class="scene-time">6:30〜7:30</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">🔀</span><span class="text">料金提示後の反応を起点に、画面を4分割で「①はい②いいえ③再提案で契約④最終いいえ」を並列表示</span></div>
+            <div class="frame-shot"><span class="icon">✅</span><span class="text">①契約パターン：スタッフが笑顔で「お支払い方法は…」と続けるシーン。明るいトーン</span></div>
+            <div class="frame-shot"><span class="icon">💭</span><span class="text">②検討パターン：スタッフが一度受け入れてから「まずはヒゲ3部位で…」と再提案するシーン</span></div>
+            <div class="frame-shot"><span class="icon">🤝</span><span class="text">④お見送りパターン：丁寧に「また始めてみようかなと…」と笑顔で締める。冷たくならない演出</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item ok"><span class="telop-label">①契約</span>「素晴らしい決断ですね！」→ お支払い方法の確認へ</div>
+          <div class="telop-item tip"><span class="telop-label">②検討</span>一度受け入れ → 「まずはヒゲ3部位でお試し感覚から」</div>
+          <div class="telop-item ok"><span class="telop-label">③再契約</span>「まずは無理なくスタートしましょう」→ 小さく始めてアップセルへ</div>
+          <div class="telop-item key"><span class="telop-label">④見送り</span>「また始めようと思われたときにはぜひ」→ 信頼維持が次回来店に繋がる</div>
+          <div class="telop-item ng"><span class="telop-label">NG</span>「いいえ」に対して強引に押し切る → 最悪のクレームにつながる</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ（全4パターン）</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          お客様の反応は4パターンあります。どのパターンでも「焦らず・押し売りせず・丁寧に」が鉄則。お見送りも立派な接客です。次回来店につながる種を植えましょう。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">①はい（契約）</div>
+              素晴らしい決断ですね！お支払い方法（現金・カード・分割払い）で、無理のない方法はどちらでしょうか？
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">②いいえ（検討・再提案）</div>
+              最初から大きなプランは勇気がいりますよね。まずは「ヒゲ3部位」でお試し感覚で始めてみませんか？体験してから範囲を広げる方も多いですよ。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">③再提案で契約</div>
+              ありがとうございます。まずは無理なくスタートしましょう。続けながら追加も検討できますので、安心してください。
+            </div>
+          </div>
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">④最終いいえ（丁寧なお見送り）</div>
+              もちろんです。また「始めてみようかな」と思われた際には、いつでもご案内させていただきます。本日はご来店いただきありがとうございました。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ENDING ========== -->
+  <div class="phase-separator" style="background: linear-gradient(135deg, #00695C, #00897B);">
+    <span>🏆</span>
+    <h2>まとめ＆ボイスチェック案内</h2>
+    <span class="phase-time">7:30〜8:00</span>
+  </div>
+
+  <div class="scene-card ending">
+    <div class="scene-header">
+      <div class="scene-num">12</div>
+      <div class="scene-title">
+        <h3>まとめ・ボイスチェック15項目・中級編への案内</h3>
+        <div class="subtitle">「次のアクション」を明確に伝えて動画を締める</div>
+      </div>
+      <div class="scene-time">7:30〜8:00</div>
+    </div>
+    <div class="scene-body">
+      <div class="scene-col">
+        <div class="col-label">🎥 映像指示</div>
+        <div class="visual-box">
+          <div class="screen-label">CAMERA / SHOT DIRECTION</div>
+          <div class="frame-content">
+            <div class="frame-shot"><span class="icon">🎓</span><span class="text">スタッフ役がカメラ目線・正面立ちで、視聴者に向けて「次にやること」を語りかける</span></div>
+            <div class="frame-shot"><span class="icon">📋</span><span class="text">ボイスチェック4カテゴリ（トークスクリプト・診断フロー・ツール活用・お客様対応）をスライドアニメで表示</span></div>
+            <div class="frame-shot"><span class="icon">🏆</span><span class="text">「合格ライン：15項目中13項目以上（87%）」をカウントアップアニメで表示。エンドカードへフェードアウト</span></div>
+          </div>
+        </div>
+        <div class="telop-items">
+          <div class="telop-item key"><span class="telop-label">TELOP</span>ボイスチェック合格ライン：15項目中13項目以上（87%）</div>
+          <div class="telop-item key"><span class="telop-label">NEXT</span>①声に出して練習 → ②上司/トレーナーへチェック申請 → ③ロープレ実施 → ④合格→中級編へ</div>
+          <div class="telop-item tip"><span class="telop-label">TIP</span>この動画は何度でも繰り返し見てOK。各章からも再生できます</div>
+        </div>
+      </div>
+      <div class="scene-col">
+        <div class="col-label">🎙 ナレーション ＋ 💬 セリフ</div>
+        <div class="narration-box" style="margin-bottom: 12px;">
+          この動画で学んだ内容を声に出して練習してみましょう。ボイスチェックでは全15項目中13項目以上（87%）が合格ラインです。合格すれば中級編へ進み、より高度なヒアリング技術を学べます。
+        </div>
+        <div class="dialogue-section">
+          <div class="speech-bubble staff">
+            <div class="avatar staff">S</div>
+            <div class="bubble">
+              <div class="bubble-name">スタッフ役（カメラ目線）</div>
+              この動画を何度も見返して、まずはトークスクリプトを声に出して練習してみてください。準備ができたら上司やトレーナーにボイスチェックを申請しましょう。型を完璧にマスターすれば、必ず成果がついてきます。一緒に頑張りましょう！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SHOOTING TIPS -->
+<div class="tips-section">
+  <div class="section-header">🎬 撮影・編集アドバイス（プロ目線）</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-num">01</div>
+      <div class="tip-title">「沈黙」は絶対にカットしない</div>
+      <div class="tip-body">診断ステップでお客様が選択するまでの3〜5秒の間は編集でカットせず残す。画面右下に「⏱ お客様が選ぶまで待つ ← これが正解」テロップを重ねると意図が伝わる。研修生に「この間が正解だ」と体感させることが最重要。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">02</div>
+      <div class="tip-title">NG例→OK例の「ビフォー／アフター」構成を2〜3回入れる</div>
+      <div class="tip-body">「痛くないですよ」だけで終わるNGシーンを赤枠・✗テロップで先に見せ、直後に正解のトークを流す。共感→修正のリズムが学習効果を大幅に上げる。P2・STEP1・クロージングの3箇所が特に効果的。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">03</div>
+      <div class="tip-title">ツールはお客様視点アングルで撮る</div>
+      <div class="tip-body">カウンセリングツールの撮影は「お客様がテーブル越しに見る角度」で固定カメラを設置。スタッフ視点ではなくお客様目線にすることで、ページの向け方・傾け方の正解が自然に視聴者に伝わる。三脚または俯瞰アームを必ず使用。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">04</div>
+      <div class="tip-title">数値テロップはアニメーションで強調する</div>
+      <div class="tip-body">「-4℃」「最短2週間」「20倍」「60分」などの数値は、スタッフが発話したタイミングと同時に数値テロップをオレンジまたは青のカラーでフラッシュインさせる。視覚と聴覚の同時刺激で記憶定着率が大幅に向上する。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">05</div>
+      <div class="tip-title">チャプター付き動画として配信する</div>
+      <div class="tip-body">SECTION 0〜3ごとにチャプターマーカーを設定。スタッフが苦手なSTEPだけ繰り返し視聴、ボイスチェック前の直前確認など、学習スタイルに合わせた使い方ができる。動画説明欄にタイムスタンプ一覧を必ず記載する。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">06</div>
+      <div class="tip-title">リアクションカットを積極的に使う</div>
+      <div class="tip-body">お客様役の「なるほど」「安心した」「迷っている」などの表情を2〜3秒のインサートカットで挿入する。研修生が「このときお客様はこう感じている」と追体験でき、感情的な理解が生まれる。表情の演技は自然体で行うこと。</div>
+    </div>
+  </div>
+</div>
+
+<div class="doc-footer">
+  メンズクリア カウンセリングツール 教育用動画【初級編】 絵コンテ＆台本 ｜ 2026年4月版 ｜ 制作用社内資料
+</div>
+
+</body>
+</html>
